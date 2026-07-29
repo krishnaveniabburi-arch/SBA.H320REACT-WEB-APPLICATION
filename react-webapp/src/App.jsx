@@ -10,8 +10,9 @@ export default function App() {
   
 
   const [movie, setMovie] = useState(null);
-
+// function to fectch movie data from OMDB API
   const getMovie = async (searchTerm) => {
+    try {
     const response = await fetch(
       `http://www.omdbapi.com/?apikey=${import.meta.env.VITE_OMDB_API_KEY}&t=${searchTerm}`
      );

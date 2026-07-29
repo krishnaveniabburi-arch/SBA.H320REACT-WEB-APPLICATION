@@ -1,0 +1,7 @@
+toml
+[[redirects]]
+from = "/*
+to = "/index.html
+status = 200
+
+// this file tells netlify how to handle single page application routing correctly if user reloads the page.

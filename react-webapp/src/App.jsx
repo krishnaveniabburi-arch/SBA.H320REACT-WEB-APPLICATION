@@ -1,13 +1,33 @@
-import { useState } from 'react'
+import {useState, useEffect} from "react";
+import logo from "./assets/hero.png";
+import "./App.css";
 
+import MovieDisplay from "./components/MovieDisplay";
+import Form from "./components/Form";
 
-function App() {
+export default function App() {
   
 
-  return ()
-    <div></div>
-      
-}    
-         
+  const [movie, setMovie] = useState(null);
 
-export default App;
+  const getMovie = async (searchTerm) => {
+    const response = await fetch(
+      `http://www.omdbapi.com/?apikey=${import.meta.env.VITE_OMDB_API_KEY}&t=${searchTerm}`
+     );
+    const data = await response.json();
+    setMovie(data);
+  };
+
+  // This will run on the first render but not on subsquent renders
+  useEffect(() => {
+    getMovie("Clueless");
+  }, []);
+
+  return (
+    <div className="App">
+      <Form moviesearch={getMovie} />
+      <MovieDisplay movie={movie} />
+    </div>
+  );
+}
+

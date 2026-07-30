@@ -1,18 +1,18 @@
-import React, { usestate } from "react";
+import React, { useState } from "react";
 export default function Form({ movieSearch }) {
     const [formData, setFormData] = useState({ searchterm: ""});
-};
+
 
 const handleSubmit = (event) => {
     event.preventDefault();
     if (formData.searchterm.trim()) {
-        moviesearch(formData.searchterm);
+        movieSearch(formData.searchterm);
     }
 };
 
 return ( 
     <div className="search-form">
-        <form onsubmot={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <input
             type="text"
             name="searchterm"
@@ -23,3 +23,4 @@ return (
         </form>
     </div>
 );
+}

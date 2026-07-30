@@ -1,8 +1,4 @@
 toml
-[build]
-base = "react-webapp"
-cpmmand = "npm run build"
-publish = "dist"
 [[redirects]]
 from = "/*
 to = "/index.html

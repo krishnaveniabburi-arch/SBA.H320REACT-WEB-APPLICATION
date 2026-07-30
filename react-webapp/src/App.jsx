@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 import logo from "./assets/hero.png";
 import "./App.css";
-import MovieDisplay from "./components/MovieDisplay";
+import MovieDisplay from "./components/Moviedisplay";
 import Form from "./components/Form";
 
 export default function App() {

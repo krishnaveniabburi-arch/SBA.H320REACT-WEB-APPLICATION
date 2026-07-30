@@ -29,7 +29,7 @@ export default function App() {
   return (
     <div className="App">
     <h1>popcornTime Movie search</h1>
-      <Form moviesearch={getMovie} />
+      <Form movieSearch={getMovie} />
       <MovieDisplay movie={movie} />
     </div>
   );

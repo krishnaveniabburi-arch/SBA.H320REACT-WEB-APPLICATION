@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 export default function Form({ movieSearch }) {
     const [formData, setFormData] = useState({ searchterm: ""});
-
+const handleChange = (event) => {
+    setFormData( {
+        ...formData,[event.target.name]: event.target.value
+    });
+};
 
 const handleSubmit = (event) => {
     event.preventDefault();
